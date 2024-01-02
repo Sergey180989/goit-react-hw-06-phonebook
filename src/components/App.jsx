@@ -4,12 +4,11 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import css from './App.module.css';
 import { useSelector } from 'react-redux';
-import { selectContacts } from './redux/selectors';
+import { selectContacts } from '../redux/selectors';
 
 export function App() {
   const contacts = useSelector(selectContacts);
 
-  
   return (
     <div className={css.container}>
       <h1 className={css.phonebook}>Phonebook</h1>

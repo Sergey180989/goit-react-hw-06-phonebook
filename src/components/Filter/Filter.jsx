@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilter } from '../redux/selectors';
-import { changeFilter } from '../redux/slice';
+import { selectFilter } from '../../redux/selectors';
+import { changeFilter } from '../../redux/slice';
 import css from './Filter.module.css';
 
 export function Filter() {

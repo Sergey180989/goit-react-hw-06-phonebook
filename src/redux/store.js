@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { contactsSlice } from './slice';
+import { contactsSlice } from './slice'; 
 import {
   persistStore,
   persistReducer,
@@ -12,6 +12,12 @@ import {
 } from 'redux-persist';
 
 import storage from 'redux-persist/lib/storage';
+
+
+const initialState = {
+  items: [],
+  filter: '',
+};
 
 const persistedContactsReducer = persistReducer(
   { key: 'contacts', storage, whitelist: ['items'] },
@@ -28,6 +34,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+  preloadedState: { contacts: initialState }, 
 });
 
 export const persistor = persistStore(store);
