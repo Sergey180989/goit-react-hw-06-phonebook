@@ -58,10 +58,10 @@ export function ContactForm() {
     event.preventDefault();
     if (
       contacts.some(
-        contactItem => contactItem.number.toLowerCase() === number.toLowerCase()
+        contactItem => contactItem.name.toLowerCase() === name.toLowerCase()
       )
     ) {
-      alert(`Oops, ${number} is already in contacts!`);
+      alert(`Oops, ${name} is already in contacts!`);
       return;
     }
     dispatch(addContact({ name, number, id: nanoid() }));
